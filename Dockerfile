@@ -7,6 +7,7 @@ RUN  dnf module install --nodocs -y nodejs:16 python39 --setopt=install_weak_dep
 RUN mkdir -p /opt/app-root/src
 WORKDIR /opt/app-root/src
 COPY package.json /opt/app-root/src
+RUN npm install --global npm@8.15.0
 RUN npm install --no-audit --no-update-notifier --no-fund --production
 COPY . .
 
